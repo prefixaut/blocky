@@ -1,0 +1,16 @@
+{
+    "name": "prefixaut/blocky",
+    "description": "Personal Wordpress Theme",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PreFiXAUT",
+            "email": "me@prefixaut.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "prefixaut/kamui": "dev-master"
+    }
+}

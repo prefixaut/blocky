@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  margin-top: 60px;
+  background: #fcfcfc;
+}
+
+body.admin-bar header {
+  top: 32px;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  float: left;
+  display: block;
+  position: fixed;
+  top: 0;
+  background: #0a6675;
+  z-index: 100;
+}
+
+header .logo-wrapper {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+}
+
+header .menu-wrapper {
+  width: 100%;
+  height: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 300px;
+}
+
+#logo {
+  width: 100%;
+  padding: 10px 10px 0;
+  box-sizing: border-box;
+  float: left;
+}
+
+#main-menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  list-style: none;
+  padding: 0 40px;
+  margin: 0;
+}
+
+#main-menu .menu-item {
+  width: 100%;
+  height: 100%;
+  flex: 1 1;
+  list-style: none;
+  display: block;
+  float: left;
+  position: relative;
+  border-left: 2px solid #fcfcfc;
+  transition: 0.3s;
+}
+
+#main-menu .menu-item:first-child {
+  border-left: 0;
+}
+
+#main-menu .menu-item:hover {
+  background: #1b9fb3;
+}
+
+#main-menu .menu-item > a {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #fcfcfc;
+  font: normal normal 500 20px/1.1 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+
+#main-menu .menu-item > a::before {
+  height: 100%;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#main-menu .menu-item-has-children > a::after {
+  font: normal normal normal 22px/1 'FontAwesome';
+  content: '\f105';
+  color: inherit;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  margin-top: -11px;
+  transition: 0.3s;
+  background: transparent;
+}
+
+#main-menu .menu-item-has-children:hover > a::after {
+  transform: rotate(90deg);
+}
+
+#main-menu .menu-item-has-children:hover .sub-menu {
+  display: block;
+}
+
+#main-menu .menu-item-has-children .sub-menu {
+  width: 100%;
+  height: auto;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #1b9fb3;
+}
+
+#main-menu .menu-item-has-children .sub-menu .menu-item {
+  height: 60px;
+  border: 0;
+}
+
+#main-menu .menu-item-has-children .sub-menu .menu-item:hover {
+  background: #41ebe9;
+}
+
+#main-menu .menu-item-has-children .sub-menu .menu-item:hover a {
+  color: #232323;
+}
+
+#slider {
+  height: 700px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+footer {
+  width: 100%;
+  float: left;
+  background: #232323;
+  color: #fcfcfc;
+  padding: 20px 0;
+  font: normal normal normal 16px/1.1 'Roboto', sans-serif;
+  margin-top: 15px;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  float: left;
+  display: block;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.card.home {
+  background-color: #eee;
+  color: #000;
+}
+
+.card .card-icon {
+  width: 100%;
+  height: 140px;
+  float: left;
+  font-size: 80px;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.card .card-body {
+  text-align: center;
+}
+
+.media .media-title {
+  font: normal normal normal 28px/1.5 'Roboto', sans-serif;
+  margin: 10px 0 0;
+  color: #232323;
+}
+
+.media .media-subtitle {
+  font: normal normal normal 16px/1.2 'Roboto', sans-serif;
+  margin: 0;
+  color: #494949;
+}
+
+.media .player-wrapper {
+  width: 100%;
+  display: block;
+  float: left;
+  padding-bottom: 56.25%;
+  position: relative;
+  margin: 15px 0;
+}
+
+.media .player-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  z-index: 1;
+}
+
+.media .chat-wrapper {
+  width: 100%;
+  height: 500px;
+  display: block;
+  position: relative;
+}
+
+.media .chat-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  z-index: 1;
+}
+
+.news-wrapper .sidebar-news {
+  width: 100%;
+  float: left;
+  display: block;
+  position: relative;
+}
+
+.news-wrapper .sidebar-news .news-date {
+  width: 150px;
+  position: absolute;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.news-wrapper .sidebar-news .news-date .day {
+  width: 70%;
+  background: #41ebe9;
+  color: #232323;
+  text-align: center;
+  margin: 0 auto;
+  font: normal normal 600 16px/1 'CodeBold', 'Roboto', sans-serif;
+  padding: 3px 0;
+}
+
+.news-wrapper .sidebar-news .news-date .month {
+  width: 100%;
+  background: #1b9fb3;
+  color: #232323;
+  text-align: center;
+  font: normal normal 600 18px/1 'CodeBold', 'Roboto', sans-serif;
+  padding: 5px 0;
+}
+
+.news-wrapper .sidebar-news .news-teaser {
+  width: 100%;
+  padding-left: 160px;
+  box-sizing: border-box;
+}
+
+.news-wrapper .sidebar-news .news-teaser .news-title {
+  margin-top: 0;
+  text-align: center;
+}
+
+.btn {
+  background: #0a6675;
+  color: #fcfcfc;
+  padding: 10px 20px;
+  border-radius: 0px;
+  border: 3px solid #232323;
+  font: normal normal normal 16px/1.3 'Roboto', sans-serif;
+}
