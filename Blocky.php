@@ -53,6 +53,43 @@ class Blocky
     {
         return $this->twitch_channel;
     }
+    
+    public function getContent($p = null, $cut = false, $finish = "<br/>Read more ...") {
+        $p = get_post($p);
+        $c = $p->post_content;
+        
+        if ($cut) {
+            if (strpos($c, "<!--more-->")) {
+                $c = substr($c, 0, strpos($c, "<!--more-->"));
+                if (!is_null($finish)) $c .= $finish;
+            }
+            
+            if (is_numeric($cut) && strlen($c) > $cut) {
+                $c = substr($c, 0, $cut);
+                if (!is_null($finish)) $c .= $finish;
+            }
+        }
+        
+        $c = apply_filters("the_content", $c);
+        $c = str_replace("]]>", "]]&gt;", $c);
+        
+        if (preg_match("/(<br{1}\s*\/>{1})$/i", $c, $match) === 1) {
+            $c = substr($c, 0, strlen($c)-strlen($match[1]));
+        }
+        
+        return trim($c);
+    }
+    
+    public function render($template, $data = array())
+    {
+        $blocky = $this;
+        foreach ($data as $name => $content) {
+            if (is_string($name)) {
+                $$name = $content;
+            }
+        }
+        require get_template_directory() . "/views/${template}.php";
+    }
         
     public function disable_emojis() {
         remove_action('wp_head', 'print_emoji_detection_script', 7);

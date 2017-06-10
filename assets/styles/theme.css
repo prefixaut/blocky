@@ -135,12 +135,6 @@ header .menu-wrapper {
   color: #232323;
 }
 
-#slider {
-  height: 700px;
-  margin-bottom: 25px;
-  overflow: hidden;
-}
-
 footer {
   width: 100%;
   float: left;
@@ -159,6 +153,7 @@ footer {
   padding: 10px;
   box-sizing: border-box;
   margin-bottom: 15px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .card.home {
@@ -171,12 +166,110 @@ footer {
   height: 140px;
   float: left;
   font-size: 80px;
-  padding: 30px 20px;
+  padding: 30px 20px 15px;
   text-align: center;
+}
+
+.card .card-title {
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.4;
 }
 
 .card .card-body {
   text-align: center;
+}
+
+#slider {
+  height: 700px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  position: relative;
+}
+
+#slider > .row {
+  height: 100%;
+}
+
+#slider .slide {
+  height: 100%;
+}
+
+#slider .slide .slide-inner {
+  width: 650px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  z-index: 10;
+}
+
+#slider .slide .slide-inner .slide-title {
+  width: 70%;
+  float: right;
+  padding: 10px 20px;
+  text-align: right;
+  background: #1b9fb3;
+  color: #232323;
+  font: normal normal 500 36px/1.4 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+#slider .slide .slide-inner .slide-content {
+  width: 100%;
+  float: right;
+  padding: 10px 20px;
+  text-align: right;
+  background: #0a6675;
+  color: #fcfcfc;
+  font: normal normal normal 22px/1.3 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+@media (max-width: 786px) {
+  #slider .slide .slide-inner {
+    width: 300px;
+  }
+  #slider .slide .slide-inner .slide-title {
+    font-size: 28px;
+  }
+  #slider .slide .slide-inner .slide-content {
+    font-size: 18px;
+  }
+}
+
+#wallop {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#wallop .Wallop-list {
+  height: 100%;
+}
+
+#wallop .Wallop-buttonNext,
+#wallop .Wallop-buttonPrevious {
+  position: absolute;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 24px;
+  margin: 0 20px;
+  border: 0;
+  text-align: center;
+}
+
+#wallop .Wallop-buttonNext {
+  right: 0;
+  left: intial;
+}
+
+#wallop .Wallop-buttonPrevious {
+  left: 0;
+  right: initial;
 }
 
 .media .media-title {
@@ -232,6 +325,7 @@ footer {
   float: left;
   display: block;
   position: relative;
+  margin: 20px 0;
 }
 
 .news-wrapper .sidebar-news .news-date {
@@ -271,11 +365,66 @@ footer {
   text-align: center;
 }
 
+@media (max-width: 480px) {
+  .news-wrapper .sidebar-news .news-date {
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+    padding: 10px 0;
+  }
+  .news-wrapper .sidebar-news .news-teaser {
+    padding-left: 0;
+  }
+}
+
+#title {
+  width: 100%;
+  height: 500px;
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#title .title-background {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#title .title-background .title-background-img {
+  max-width: 100%;
+}
+
+#title .title-container {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  margin-top: -35px;
+}
+
+#title .title-container .title-content {
+  height: 100%;
+  width: 50%;
+  padding: 0 50px;
+  text-align: center;
+  background: #41ebe9;
+  color: #232323;
+  font-size: 40px;
+  line-height: 70px;
+  float: left;
+  display: block;
+  margin: 0 25%;
+}
+
 .btn {
   background: #0a6675;
   color: #fcfcfc;
   padding: 10px 20px;
   border-radius: 0px;
-  border: 3px solid #232323;
   font: normal normal normal 16px/1.3 'Roboto', sans-serif;
+}
+
+.btn:hover {
+  color: #fcfcfc;
 }

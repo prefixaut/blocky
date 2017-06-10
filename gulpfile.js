@@ -32,7 +32,7 @@ const config = {
  * ------------------------------------------------------ */
 function compileStyles() {
   return gulp.src('./assets/styles/**/*.scss')
-    .pipe(sass(config.sass))
+    .pipe(sass(config.sass).on('error', sass.logError))
     //.pipe(autoprefixer())
     .pipe(gulp.dest('./assets/styles/'))
     .pipe(browserSync.stream());
@@ -43,6 +43,7 @@ function minifyStyles() {
     './node_modules/font-awesome/css/font-awesome.css',
     './node_modules/bootstrap/dist/css/bootstrap.css',
     './node_modules/wallop/css/wallop.css',
+    './node_modules/wallop/css/wallop--slide.css',
     './assets/styles/*.css'
   ])
     .pipe(concat('theme.css'))

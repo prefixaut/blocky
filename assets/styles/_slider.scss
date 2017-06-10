@@ -1,0 +1,91 @@
+#slider {
+  height: 700px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  position: relative;
+  
+  > .row {
+    height: 100%;
+  }
+  
+  .slide {
+    height: 100%;
+    
+    .slide-inner {
+      width: 650px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: 50px;
+      margin-bottom: 20px;
+      z-index: 10;
+      
+      .slide-title {
+        width: 70%;
+        float: right;
+        padding: 10px 20px;
+        text-align: right;
+        background: $blue-base;
+        color: $black;
+        font: normal normal 500 36px/1.4 'Roboto', sans-serif;
+        box-sizing: border-box;
+      }
+      
+      .slide-content {
+        width: 100%;
+        float: right;
+        padding: 10px 20px;
+        text-align: right;
+        background: $blue-dark;
+        color: $white;
+        font: normal normal normal 22px/1.3 'Open Sans', sans-serif;
+        box-sizing: border-box;
+      }
+      
+      @media (max-width: 786px) {
+        width: 300px;
+        
+        .slide-title {
+          font-size: 28px;
+        }
+        
+        .slide-content {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+#wallop {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  
+  .Wallop-list {
+    height: 100%;
+  }
+  
+  .Wallop-buttonNext,
+  .Wallop-buttonPrevious {
+    position: absolute;
+    top: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 24px;
+    margin: 0 20px;
+    border: 0;
+    text-align: center;
+  }
+  
+  .Wallop-buttonNext {
+    right: 0;
+    left: intial;
+  }
+  
+  .Wallop-buttonPrevious {
+    left: 0;
+    right: initial;
+  }
+}
