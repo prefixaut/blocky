@@ -1,4 +1,4 @@
-        <footer>
+        <footer class="row">
             <div class="container">
                 <div id="copyright">
                     <p>Copyright &copy; PreFiXAUT, <?= date('Y'); ?></p>

@@ -7,7 +7,7 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-        <header>
+        <header class="row">
             <a href="/" class="logo-wrapper">
                 <img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png" id="logo" alt="logo" />
             </a>
@@ -16,10 +16,11 @@
                 <?php
                     if (has_nav_menu('main')) {
                         wp_nav_menu(array(
-                            "menu_class" => "menu",
-                            "menu_id" => "main-menu",
-                            "container" => false,
-                            "echo" => true
+                            'menu_class'    => 'sm-menu menu openers',
+                            'menu_id'       => 'main-menu',
+                            'container'     => false,
+                            'echo'          => true,
+                            'walker'        => new BlockyWalker(),
                         ));
                     }
                 ?>
