@@ -9,7 +9,6 @@
   "author": "PreFiXAUT",
   "license": "UNLICENSED",
   "devDependencies": {
-    "bootstrap": "^3.3.7",
     "browser-sync": "^2.18.8",
     "font-awesome": "^4.7.0",
     "gulp": "github:gulpjs/gulp#4.0",
@@ -17,7 +16,9 @@
     "gulp-clean-css": "^3.2.0",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0"
+    "gulp-uglify": "^3.0.0",
+    "jelly-sass": "^0.2.0",
+    "sasspect": "^1.0.1"
   },
   "dependencies": {
     "jquery": "^3.2.1"

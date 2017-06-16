@@ -18,7 +18,13 @@ const uglify = require('gulp-uglify');
  * ------------------------------------------------------ */
 const config = {
   sass: {
-    outputStyle: 'expanded'
+    outputStyle: 'expanded',
+    includePaths: [
+        './node_modules/sasspect',
+        './node_modules/jelly-sass',
+        './node_modules/font-awesome/scss',
+        './node_modules/wallop/css'
+    ]
   },
   browserSync: {
     server: {
@@ -39,13 +45,7 @@ function compileStyles() {
 }
 
 function minifyStyles() {
-  return gulp.src([
-    './node_modules/font-awesome/css/font-awesome.css',
-    './node_modules/bootstrap/dist/css/bootstrap.css',
-    './node_modules/wallop/css/wallop.css',
-    './node_modules/wallop/css/wallop--slide.css',
-    './assets/styles/*.css'
-  ])
+  return gulp.src('./assets/styles/*.css')
     .pipe(concat('theme.css'))
     .pipe(cleanCSS())
     .pipe(gulp.dest('./'))

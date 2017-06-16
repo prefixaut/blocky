@@ -1,25 +1,44 @@
+// Libraries
+// ---------------------------------------
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "wallop";
+@import "wallop--slide";
+@import "font-awesome";
+@import "jelly";
 
+// Configuration
+// ---------------------------------------
 @import "variables";
 
 body {
-  margin-top: $header-height;
+  margin-top: $header-height !important;
   background: $white;
   
   &.admin-bar {    
     header {
       top: 32px;
+      
+      @media screen and (max-width: 782px) {
+        top: 46px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    #wpadminbar {
+      position: fixed;
     }
   }
 }
 
 @import "header";
-@import "footer";
+@import "menu";
 @import "card";
 @import "slider";
 @import "media";
 @import "news";
 @import "title";
+@import "footer";
 
 .btn {
   background: $blue-dark;
