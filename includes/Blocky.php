@@ -15,7 +15,7 @@ class Blocky
      * ------------------------------------------------------ */
     public function __construct()
     {
-        $this->twitch_token = require(__DIR__ . '/config/twitch-key.php');
+        $this->twitch_token = require(get_template_directory() . '/config/twitch-key.php');
         $this->setupHooks();
     }
     
