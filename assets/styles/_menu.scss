@@ -1,140 +1,114 @@
-#main-menu {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  list-style: none;
-  padding: 0 40px;
-  margin: 0;
+.menu .menu-item .item-content,
+.menu .menu-item .menu-opener {
+  height: $menu-height;
+}
+
+.menu .menu-item .menu-opener {
+  width: $menu-height;
+}
+
+.menu .menu-item {
+  transition: 0.3s;
+  font: normal normal normal 22px/1.2 'Open Sans', sans-serif;
+}
+
+.menu > .menu-item {
+  background: $blue-dark;
+  color: $white;
   
-  .menu-item {
-    width: 100%;
-    height: 100%;
-    flex: 1 1;
-    list-style: none;
-    display: block;
-    float: left;
-    position: relative;
-    border-left: 2px solid $white;
+  &:hover,
+  &.current_page_item {
+    background: $blue-base;
+  }
+}
+
+.menu .sub-menu .menu-item {
+  background: $blue-base;
+  color: $white;
+  font-size: 18px;
+  
+  &:hover,
+  &.current_page_item {
+    background: $blue-light;
+    color: $black;
+  }
+}
+
+.menu .sub-menu .sub-menu .menu-item {
+  background: $blue-light;
+  color: $black;
+  
+  &:hover,
+  &.current_page_item {
+    background: $white;
+  }
+}
+
+.menu .menu-item .menu-opener::before {
+  font-family: 'FontAwesome';
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  margin-top: 20px;
+  opacity: 1;
+}
+.menu > .menu-item > .menu-opener::after {
+  content: '\f068';
+  font-family: 'FontAwesome';
+  width: 100%;
+  text-align: center;
+  display: none;
+  margin-top: -50%;
+  opacity: 0;
+}
+.menu > .menu-item > .menu-opener::before {
+  content: '\f0c9';
+}
+@media all and (min-width: 559px) {
+  .menu .menu-item:hover > .menu-opener::before {
+    transform: rotate(-90deg);
     transition: 0.3s;
-    
-    &:first-child {
-      border-left: 0;
-    }
-    
-    &:hover {
-      background: $blue-base;
-    }
-    
-    .menu-opener::before {
-      font-family: 'FontAwesome';
-      width: 100%;
-      text-align: center;
-      display: inline-block;
-      margin-top: 50%;
-      opacity: 1;
-    }
-    
-    > .menu-opener {
-      &::before {
-        content: '\f0c9';
-      }
-      
-      &::after {
-        content: '\f068';
-        font-family: 'FontAwesome';
-        width: 100%;
-        text-align: center;
-        display: none;
-        margin-top: -50%;
+  }
+  
+  .menu > .menu-item:last-child .menu-item:hover > .menu-opener::before {
+    transform: rotate(90deg);
+  } 
+  
+  .menu {
+    > .menu-item:hover,
+    > .menu-item.current_page_item {
+      > .menu-opener::before {
+        transform: none;
         opacity: 0;
       }
-    }
-    
-    @include media-up('sm') {
-      &:hover {
-        
-        > .menu-opener {
-          transform: rotate(-90deg);
-          transition: 0.3s;
-          opacity: 0;
-        }
-        
-        &:last-child {
-          > .menu-opener {
-            transform: rotate(90deg);
-          }
-        }
-      }
-    }
-    
-    > a {
-      width: 100%;
-      height: 100%;
-      box-sizing: border-box;
-      display: inline-block;
-      text-align: center;
-      vertical-align: middle;
-      text-decoration: none;
-      color: $white;
-      font: normal normal 500 20px/1.1 'Roboto', sans-serif;
-      text-transform: uppercase;
-      
-      &::before {
-        height: 100%;
-        content: '';
-        display: inline-block;
-        vertical-align: middle;
-      }
+    }  
+  }
+  .menu .menu-item-has-children {
+    height: $menu-height;
+  }
+}
+
+#mobile-menu-toggle {
+  display: none;
+  height: 100%;
+  width: 60px;
+  font-size: 45px;
+  color: $white;
+  float: right;
+  line-height: $header-height;
+}
+
+@media all and (max-width: 940px) {
+  header {
+    .menu-wrapper {
+      display: none;
+      padding-left: 0;
+      float: left;
+      height: auto;
     }
   }
   
-  .menu-item-has-children {
-    > a::after {
-      font: normal normal normal 22px/1 'FontAwesome';
-      content: '\f105';
-      color: inherit;
-      position: absolute;
-      right: 25px;
-      top: 50%;
-      margin-top: -11px;
-      transition: 0.3s;
-      background: transparent;
-    }
-    
-    &:hover {
-      > a::after {
-        transform: rotate(90deg);
-      }
-      
-      .sub-menu {
-        display: block;
-      }
-    }
-    
-    .sub-menu {
-      width: 100%;
-      height: auto;
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background: $blue-base;
-      
-      .menu-item {
-        height: $header-height;
-        border: 0;
-        
-        &:hover {
-          background: $blue-light;
-          
-          a {
-            color: $black;
-          }
-        }
-      }
-    }
+  #mobile-menu-toggle {
+    display: block;
   }
 }

@@ -5,5 +5,9 @@ footer {
   color: $white;
   padding: 20px 0;
   font: normal normal normal 16px/1.1 'Roboto', sans-serif;
-  margin-top: 15px;
+  margin-top: 15px; 
+  
+  p {
+    color: $white;
+  }
 }

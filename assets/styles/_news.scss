@@ -11,25 +11,40 @@
       position: absolute;
       padding: 10px;
       box-sizing: border-box;
+      display: flex;
       
       .day {
-        width: 70%;
+        height: 35px;
+        width: 35px;
+        flex: 0 0 35px;
         background: $blue-light;
         color: $black;
         text-align: center;
         margin: 0 auto;
         font: normal normal 600 16px/1 'CodeBold', 'Roboto', sans-serif;
-        padding: 3px 0;
+        padding: 10px 0;
+        float: left;
+        box-sizing: border-box;
       }
       
       .month {
+        height: 35px;
         width: 100%;
+        flex: 1;
         background: $blue-base;
         color: $black;
         text-align: center;
-        font: normal normal 600 18px/1 'CodeBold', 'Roboto', sans-serif;
-        padding: 5px 0;
+        font: normal normal 600 16px/1 'CodeBold', 'Roboto', sans-serif;
+        text-transform: uppercase;
+        padding: 10px 0;
+        box-sizing: border-box;
+        float: left;
       }
+    }
+    
+    .news-readmore {
+      position: absolute;
+      top: 50px;
     }
     
     .news-teaser {
@@ -39,16 +54,29 @@
       
       .news-title {
         margin-top: 0;
-        text-align: center;
+        text-align: left;
       }
     }
     
     @media (max-width: $bp-xs) {
+      &:not(:last-child) {
+        margin: 0;
+        padding: 20px 0;
+        border-bottom: 3px solid $black;
+      }
+      
       .news-date {
         width: 100%;
         position: relative;
-        margin-top: 20px;
         padding: 10px 0;
+      }
+      
+      .news-readmore {
+        position: relative;
+        top: initial;
+        > .readmore-button {
+          margin: 15px 0 0 0;
+        }
       }
       
       .news-teaser {
