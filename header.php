@@ -12,6 +12,9 @@
                 <img src="<?= get_template_directory_uri(); ?>/assets/images/logo-white.png" id="logo" alt="logo" />
             </a>
 
+            <div id="mobile-menu-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
             <div class="menu-wrapper">
                 <?php
                     if (has_nav_menu('main')) {
