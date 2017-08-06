@@ -10,6 +10,7 @@ class Blocky
      * ------------------------------------------------------ */
     private $twitch_channel     = 'prefixaut';
     private $twitch_token       = null;
+    private $default_post_image;
     
     /* ~ Constructor
      * ------------------------------------------------------ */
@@ -17,6 +18,7 @@ class Blocky
     {
         $this->twitch_token = require(get_template_directory() . '/config/twitch-key.php');
         $this->setupHooks();
+        $this->default_post_image = get_template_directory_uri() . '/assets/images/slide-1.jpg';
     }
     
     /* ~ Functions
@@ -61,7 +63,6 @@ class Blocky
         if ($cut) {
             if (strpos($c, "<!--more-->")) {
                 $c = substr($c, 0, strpos($c, "<!--more-->"));
-                if (!is_null($finish)) $c .= $finish;
             }
             
             if (is_numeric($cut) && strlen($c) > $cut) {
@@ -89,6 +90,18 @@ class Blocky
             }
         }
         require get_template_directory() . "/views/${template}.php";
+    }
+    
+    public function getPostImage($post = null) {
+        $p = get_post($post);
+        
+        $thumbnailId = get_post_thumbnail_id($p->ID);
+        $images = wp_get_attachment_image_src($thumbnailId, 'single-post-thumbnail');
+        if (is_array($images) && sizeof($images) > 0) {
+            return $images[0];
+        }
+        
+        return $this->default_post_image;
     }
         
     public function disable_emojis() {

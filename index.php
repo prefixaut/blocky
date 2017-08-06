@@ -2,7 +2,7 @@
 
 <section id="title">
     <div class="title-background">
-        <img src="<?= the_post_thumbnail_url(); ?>" class="title-background-img" />
+        <img src="<?= $blocky->getPostImage(); ?>" class="title-background-img" />
     </div>
     <div class="title-container">
         <h1 class="title-content"><?php the_title(); ?></h1>
