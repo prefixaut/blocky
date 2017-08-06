@@ -52,7 +52,7 @@
                 <div class="card-icon fa fa-flask"></div>
                 <div class="card-title">Development</div>
                 <div class="card-body">
-                    <p>I'm dun dev stuff</p>
+                    <p>I've dun dev stuff on <a href="https://github.com/prefixaut/" target="_blank">GitHub</a></p>
                 </div>
             </div>
         </div>
@@ -90,7 +90,9 @@
                 'name'      => $stream->stream->channel->name,
             ));
         } else {
-            
+            $blocky->render('front-youtube', array(
+                
+            ));
         }
     ?>
     
