@@ -64,11 +64,19 @@ function minifyScripts() {
         .pipe(browserSync.stream());
 }
 
+function copyFonts() {
+    return gulp.src([
+        './node_modules/font-awesome/fonts/*'
+    ])
+        .pipe(gulp.dest('./assets/fonts/'));
+}
+
 /* ~ Tasks
  * ------------------------------------------------------ */
 // Compilation
 gulp.task('compile:styles', compileStyles);
-gulp.task('compile', gulp.parallel('compile:styles'));
+gulp.task('copy-fonts', copyFonts);
+gulp.task('compile', gulp.parallel('compile:styles', 'copy-fonts'));
 
 // Minification
 gulp.task('minify:styles', minifyStyles);
@@ -76,7 +84,7 @@ gulp.task('minify:scripts', minifyScripts);
 gulp.task('minify', gulp.parallel('minify:styles', 'minify:scripts'));
 
 // General Tasks
-gulp.task('styles', gulp.series('compile:styles', 'minify:styles'));
+gulp.task('styles', gulp.series('compile:styles', 'copy-fonts', 'minify:styles'));
 gulp.task('scripts', gulp.series('minify:scripts'));
 
 gulp.task('build', gulp.parallel('styles', 'scripts'));
