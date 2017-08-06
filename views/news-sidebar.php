@@ -7,11 +7,11 @@
     </div>
     <div class="news-teaser">
         <h3 class="news-title"><?= get_the_title($p->ID); ?></h3>
-        <div class="news-content"><?= $blocky->getContent($p->ID, true); ?></div>
-        <a href="<?= get_permalink($p->ID); ?>">
-            <button class="btn readmore-button">Read more ...</button>
-        </a>
+        <div class="news-content"><?= $blocky->getContent($p->ID, true, '...'); ?></div>
     </div>
+    <a class="news-readmore" href="<?= get_permalink($p->ID); ?>">
+        <button class="btn readmore-button">Read more</button>
+    </a>
 </article>
 
 <?php endforeach; ?>
