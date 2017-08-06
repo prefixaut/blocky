@@ -1,4 +1,5 @@
 node_modules
 vendor
 config/twitch-key.php
+.vscode
 .remote-sync.json
