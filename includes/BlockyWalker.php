@@ -137,7 +137,7 @@ class BlockyWalker extends Walker_Nav_Menu {
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
 		$item_output .= $args->link_before;
-		$item_output .= '<span classs="item-content">' . $title .  '</span>';
+		$item_output .= '<span class="item-content">' . $title .  '</span>';
 		$item_output .= $args->link_after;
 		$item_output .= '</a>';
 		
