@@ -18,9 +18,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "jelly-sass": "^0.2.0",
-    "sasspect": "^1.0.1"
-  },
-  "dependencies": {
-    "jquery": "^3.2.1"
+    "sasspect": "^1.0.1",
+    "wallop": "^2.4.1"
   }
 }

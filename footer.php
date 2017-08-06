@@ -1,7 +1,9 @@
         <footer class="row">
             <div class="container">
-                <div id="copyright">
-                    <p>Copyright &copy; PreFiXAUT, <?= date('Y'); ?></p>
+                <div class="full-12">
+                    <div id="copyright">
+                        <p>Copyright &copy; PreFiXAUT, <?= date('Y'); ?></p>
+                    </div>
                 </div>
             </div>
         </footer>

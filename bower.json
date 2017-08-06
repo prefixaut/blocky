@@ -1,0 +1,17 @@
+{
+  "name": "blocky",
+  "description": "Customt theme",
+  "authors": [
+    "PreFiXAUT"
+  ],
+  "license": "MIT",
+  "homepage": "http://prefixaut.net",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
